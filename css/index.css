@@ -1,0 +1,227 @@
+/* Estilos generales del cuerpo y HTML */
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive; /* Fuente arcade */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Estilo del contenedor del juego */
+#game-container {
+    display: flex;
+    flex-direction: column; /* Asegúrate de que los elementos estén en columna en pantallas pequeñas */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 100%; /* Asegura que no se exceda el ancho de la pantalla */
+    max-height: 100%; /* Asegura que no se exceda el alto de la pantalla */
+    overflow: hidden; /* Evita el desbordamiento de contenido */
+}
+
+/* Título del juego */
+.title{
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+.titulo {
+    color: #ffcc00;
+    text-shadow: 2px 2px 0 #ff0000;
+    margin-bottom: 20px;
+}
+
+/* Laberinto */
+#maze {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid #ffcc00;
+    background-color: #000;
+}
+
+/* Paredes del laberinto */
+.wall {
+    background-color: #ff0000;
+}
+
+/* Fin del laberinto */
+.end {
+    background-color: #00ff00;
+}
+
+/* Objeto en movimiento */
+#object {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #00f;
+    border: 2px solid #ffcc00;
+    cursor: pointer;
+}
+
+/* Mensaje de pausa */
+#estado-pausa {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 200%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffcc00;
+    padding: 7px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+/* Caja de pregunta */
+#question-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #222;
+    border: 2px solid #ffcc00;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+/* Contenedor del pop-up */
+#pop-up-container,#guardar-record {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #222;
+    border: 2px solid #ffcc00;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    display: none; /* Inicialmente oculto */
+}
+
+#pop-up-container.show,#guardar-record.show {
+    display: block; /* Mostrar cuando se añade la clase 'show' */
+}
+/* Botón de cerrar pop-up */
+#close-pop-up {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#close-pop-up:hover {
+    background-color: #0056b3;
+}
+
+/* Animación de parpadeo del objeto */
+@keyframes parpadeo {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+#object.parpadeo {
+    animation: parpadeo 0.5s step-start infinite;
+}
+header{
+    display: flex;
+    gap: 1%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+/* Indicador de nivel */
+#nivel-indicador {
+    font-size: 1.2rem;
+    color: #ffcc00;
+    text-shadow: 1px 1px 0 #ff0000;
+    margin-bottom: 10px;
+}
+/* Temporizador */
+#tiempo-indicador {
+    font-size: 1.2rem;
+    color: #ffcc00;
+    text-shadow: 1px 1px 0 #ff0000;
+    margin-bottom: 10px;
+}
+a{
+    font-size: 1.1rem;
+    color: #ffcc00;
+    text-shadow: 1px 1px 0 #ff0000;
+    margin-bottom: 10px;
+}
+.userName{
+    font-size: 1.1rem;
+    color: #ffcc00;
+    text-shadow: 1px 1px 0 #ff0000;
+    margin-bottom: 10px;
+}
+
+/* Estilos de entrada y botones */
+input, button {
+    font-family: 'Press Start 2P', cursive;
+    border: 2px solid #ffcc00;
+    background-color: #000;
+    color: #ffcc00;
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 80%;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ffcc00;
+    color: #000;
+}
+.hidden{
+    display: none;
+}
+/* Media queries para adaptar la vista en dispositivos móviles */
+@media (max-width: 600px) {
+    #game-container {
+        width: 100%;
+    }
+
+    #maze {
+        border-width: 1px; /* Reduce el grosor del borde en pantallas pequeñas */
+    }
+
+    #object {
+        width: 30px; /* Reduce el tamaño del objeto en pantallas pequeñas */
+        height: 30px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    #question-box, #pop-up-container {
+        padding: 15px;
+    }
+
+    input {
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px;
+    }
+}

@@ -1,0 +1,45 @@
+/* Estilos generales del cuerpo y HTML */
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive; /* Fuente arcade */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+}
+main{
+    width: 80%;
+}
+/* Título del juego */
+.title{
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+.titulo {
+    color: #ffcc00;
+    text-shadow: 2px 2px 0 #ff0000;
+    margin-bottom: 20px;
+}
+a{
+    font-size: 1.1rem;
+    color: #ffcc00;
+    text-shadow: 1px 1px 0 #ff0000;
+    margin-bottom: 10px;
+}
+.tituloRecords{
+    display: flex;
+    justify-content: space-between;
+    color: #ffcc00;
+    text-shadow: 2px 2px 0 #ff0000;
+    margin-bottom: 20px;
+}
+.record{
+    display: flex;
+    justify-content: space-between;
+}
